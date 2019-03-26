@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <script src="jquery/jquery-3.2.1.min.js"></script>
+   <title>Añadir Partido</title>
+
+   <link rel="stylesheet" type="text/css" href="css/css2.css">
+   <link rel="stylesheet" type="text/css" href="css/cssdecalendario.css">
+</head>
+<body>
+      <header class="bloque_de_titulo">
+        <nav>
+          <ul>
+            <li><a class="boton2 inicio" href="index.html">Inicio&nbsp;&nbsp;<img src="image/boton-de-inicio.png"></a></li>
+            <li><a class="boton1 calendario" href="calendario.html">Calendario&nbsp;&nbsp;<img src="image/calendario.png" ></a></li>
+            <li><a class="boton1 añadir" href="añadir.html">Añadir&nbsp;&nbsp;<img src="image/boton-de-suma.png" ></a></li>
+            <li><a class="boton1 login" href="ingresar.html">Login&nbsp;&nbsp;<img src="image/login.png" ></a></li>
+            <li><a class="boton2 registrar" href="registrar.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </header>
+<div class="cabeza">
+	
+</div>
+
+
+
+      <h2 id="titulo">Calendario</h2>
+
+     
+
+
+<div>
+    <ol class="calendar">
+  <li class="calendar-day calendar-day--begin-week calendar-day--past calendar-day--not-month" data-weekday="Mon" data-week="39">
+    <span class="calendar-day__number" id="26" >26</span>
+    <div class="calendar-day__content" id="ene26"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--not-month" data-weekday="Tue" data-week="39">
+    <span class="calendar-day__number" id="27">27</span>
+    <div class="calendar-day__content" id="ene27"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--not-month" data-weekday="Wed" data-week="39">
+    <span class="calendar-day__number" id="28">28</span>
+    <div class="calendar-day__content" id="ene28"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--not-month" data-weekday="Thu" data-week="39">
+    <span class="calendar-day__number" id="29">29</span>
+    <div class="calendar-day__content" id="ene29"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--not-month" data-weekday="Fri" data-week="39">
+    <span class="calendar-day__number" id="30">30</span>
+    <div class="calendar-day__content"  id="ene30"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sat" data-week="39">
+    <span class="calendar-day__number" id="fec1">01</span>
+    <div class="calendar-day__content" id="feb01"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sun" data-week="39">
+    <span class="calendar-day__number" id="fec2">02</span>
+    <div class="calendar-day__content" id="feb02"></div>
+  </li>
+  <li class="calendar-day calendar-day--begin-week calendar-day--past" data-weekday="Mon" data-week="40">
+    <span class="calendar-day__number" id="fec3">03</span>
+    <div class="calendar-day__content" id="feb03"></div>
+  </li>
+  <li class="calendar-day calendar-day--past" data-weekday="Tue" data-week="40">
+    <span class="calendar-day__number" id="fec4">04</span>
+    <div class="calendar-day__content" id="feb04"></div>
+  </li>
+  <li class="calendar-day calendar-day--past" data-weekday="Wed" data-week="40">
+    <span class="calendar-day__number" id="fec5">05</span>
+    <div class="calendar-day__content"  id="feb05"></div>
+  </li>
+  <li class="calendar-day calendar-day--past" data-weekday="Thu" data-week="40">
+    <span class="calendar-day__number" id="fec6">06</span>
+    <div class="calendar-day__content" id="feb06"></div>
+  </li>
+  <li class="calendar-day calendar-day--past" data-weekday="Fri" data-week="40">
+    <span class="calendar-day__number" id="fec7">07</span>
+    <div class="calendar-day__content" id="feb07"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sat" data-week="40">
+    <span class="calendar-day__number" id="fec8">08</span>
+    <div class="calendar-day__content" id="feb08"></div>
+  </li>
+  <li class="calendar-day calendar-day--entry" data-weekday="Sun" data-week="40">
+    <span class="calendar-day__number" id="fec9">09</span>
+    <div class="calendar-day__content" id="feb09"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Mon" data-week="41">
+    <span class="calendar-day__number" id="fec10">10</span>
+    <div class="calendar-day__content" id="feb10"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Tue" data-week="41">
+    <span class="calendar-day__number" id="fec11">11</span>
+    <div class="calendar-day__content" id="feb11"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Wed" data-week="41">
+    <span class="calendar-day__number" id="fec12">12</span>
+    <div class="calendar-day__content" id="feb12"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Thu" data-week="41">
+    <span class="calendar-day__number" id="fec13">13</span>
+    <div class="calendar-day__content" id="feb13"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Fri" data-week="41">
+    <span class="calendar-day__number" id="fec14">14</span>
+    <div class="calendar-day__content" id="feb14"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sat" data-week="41">
+    <span class="calendar-day__number" id="fec15">15</span>
+    <div class="calendar-day__content" id="feb15"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sun" data-week="41">
+    <span class="calendar-day__number" id="fec16">16</span>
+    <div class="calendar-day__content" id="feb16"></div>
+  </li>
+  <li class="calendar-day calendar-day--begin-week" data-weekday="Mon" data-week="42">
+    <span class="calendar-day__number"  id="fec17">17</span>
+    <div class="calendar-day__content" id="feb17"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Tue" data-week="42">
+    <span class="calendar-day__number" id="fec18">18</span>
+    <div class="calendar-day__content" id="feb18"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Wed" data-week="42">
+    <span class="calendar-day__number" id="fec19">19</span>
+    <div class="calendar-day__content" id="feb19"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Thu" data-week="42">
+    <span class="calendar-day__number" id="fec20">20</span>
+    <div class="calendar-day__content" id="feb20"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Fri" data-week="42">
+    <span class="calendar-day__number" id="fec21">21</span>
+    <div class="calendar-day__content" id="feb21"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sat" data-week="42">
+    <span class="calendar-day__number" id="fec22">22</span>
+    <div class="calendar-day__content" id="feb22"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sun" data-week="42">
+    <span class="calendar-day__number" id="fec23">23</span>
+    <div class="calendar-day__content" id="feb23"></div>
+  </li>
+  <li class="calendar-day calendar-day--begin-week" data-weekday="Mon" data-week="43">
+    <span class="calendar-day__number" id="fec24">24</span>
+    <div class="calendar-day__content" id="feb24"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Tue" data-week="43">
+    <span class="calendar-day__number" id="fec25">25</span>
+    <div class="calendar-day__content" id="feb25"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Wed" data-week="43">
+    <span class="calendar-day__number" id="fec26">26</span>
+    <div class="calendar-day__content" id="feb26"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Thu" data-week="43">
+    <span class="calendar-day__number" id="fec27">27</span>
+    <div class="calendar-day__content" id="feb27"></div>
+  </li>
+  <li class="calendar-day" data-weekday="Fri" data-week="43">
+    <span class="calendar-day__number" id="fec28">28</span>
+    <div class="calendar-day__content" id="feb28"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sat" data-week="43">
+    <span class="calendar-day__number" id="fec29">29</span>
+    <div class="calendar-day__content" id="feb29"></div>
+  </li>
+  <li class="calendar-day calendar-day--past calendar-day--entry" data-weekday="Sun" data-week="43">
+    <span class="calendar-day__number" id="fec30">30</span>
+    <div class="calendar-day__content" id="feb30"></div>
+  </li>
+  <li class="calendar-day calendar-day--begin-week" data-weekday="Mon" data-week="44">
+    <span class="calendar-day__number" id="fec31">31</span>
+    <div class="calendar-day__content" id="feb31"></div>
+  </li>
+  <li class="calendar-day calendar-day--not-month" data-weekday="Tue" data-week="44">
+    <span class="calendar-day__number" id="01">01</span>
+    <div class="calendar-day__content" id="mar01"></div>
+  </li>
+  <li class="calendar-day calendar-day--not-month" data-weekday="Wed" data-week="44">
+    <span class="calendar-day__number" id="02">02</span>
+    <div class="calendar-day__content" id="mar02"></div>
+  </li>
+  <li class="calendar-day calendar-day--not-month" data-weekday="Thu" data-week="44">
+    <span class="calendar-day__number" id="03">03</span>
+    <div class="calendar-day__content" id="mar03"></div>
+  </li>
+  <li class="calendar-day calendar-day--not-month" data-weekday="Fri" data-week="44">
+    <span class="calendar-day__number" id="04">04</span>
+    <div class="calendar-day__content" id="mar04"></div>
+  </li>
+  <li class="calendar-day calendar-day--not-month" data-weekday="Sat" data-week="44">
+    <span class="calendar-day__number" id="05">05</span>
+    <div class="calendar-day__content" id="mar05"></div>
+  </li>
+  <li class="calendar-day calendar-day--not-month" data-weekday="Sun" data-week="44">
+    <span class="calendar-day__number" id="06">06</span>
+    <div class="calendar-day__content" id="mar06"></div>
+  </li>
+</ol>
+        <span id="mesactual" value="Febrero" >2</span>
+        <span id="annoactual" value="2019" >2019</span>
+     </div>
+
+
+<!-- Links-->
+
+</body>
+</html>
