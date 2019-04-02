@@ -51,8 +51,12 @@ var equipo = new Schema
 			ESPECIALIDAD:String
 		}
 
+	},
+	SELECTDEPARTIDO:{
+		NOOMBRE:String,
+		EMAIL:String
 	}
-
+	
 
 
 });

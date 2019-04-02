@@ -9,7 +9,8 @@ Guardar(req,res) {
     NOMBRE: req.body.NOMBRE,
     COMPLETO: req.body.COMPLETO,
     IMAGEN: req.body.IMAGEN,
-    JUGADORES: req.body.JUGADORES
+    JUGADORES: req.body.JUGADORES,
+    SELECTDEPARTIDO: req.body.SELECTDEPARTIDO
 
 
             }, 
@@ -41,7 +42,8 @@ Guardar(req,res) {
       NOMBRE: req.body.NOMBRE,
       COMPLETO: req.body.COMPLETO,
       IMAGEN: req.body.IMAGEN,
-      JUGADORES: req.body.JUGADORES
+      JUGADORES: req.body.JUGADORES,
+      SELECTDEPARTIDO: req.body.SELECTDEPARTIDO
             }}, 
 			function(err, item) {
 				if (err)

@@ -209,6 +209,56 @@
 
 
 <!-- Links-->
+        <script type="text/javascript" src="partidos_frontend.js"></script>
+<script>function cargataquilla(id)
+        {
 
+
+             let clasepeliculainstanciada = new _Partido(id);
+               clasepeliculainstanciada.Seleccionarporid().then(function(response) {
+
+
+
+               localStorage.setItem("peliculaseleccionada",JSON.stringify(response));
+                   location.href="marcador.html"
+}, function(error) {
+ console.log(error);
+});
+
+
+
+
+
+        }
+        </script>
+        <script>
+        function agregaimgdepeliculaaldiv(iddeldiv,iddelapelicula)  //  Primero llega a la funcion de abajo cargarpeliculasdelmesyanno
+
+    {
+        document.getElementById('fec'+iddeldiv).innerHTML += "<img src='image/cancha1.jpeg' height='80' width='80' id= "+iddelapelicula+" onclick='cargataquilla(\""+iddelapelicula+"\")'>"; //  El fec dentro del getElementById es porque solo reconoce los numeros y hay que concatenar el fec
+    }
+    function cargarpeliculasdelmesyanno()
+    {
+
+        let clasepeliculainstanciada = new _Partido();
+               clasepeliculainstanciada.peliculaspormesyanno(document.getElementById("mesactual").innerHTML,document.getElementById("annoactual").innerHTML).then(function(response) {
+                   
+ for(var elemento in response)
+     {
+         var fechadelapeliculaactual = new Date(response[elemento].FECHA);
+         agregaimgdepeliculaaldiv(fechadelapeliculaactual.getDate(),response[elemento]._id);
+         
+     }
+                   
+                   
+                   
+                   
+}, function(error) {
+ console.log(error);
+});
+        
+        
+    }
+        </script>
 </body>
 </html>

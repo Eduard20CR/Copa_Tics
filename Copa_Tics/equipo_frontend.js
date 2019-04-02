@@ -1,17 +1,17 @@
-     
-            
-        class _Pelicula {
+        class _Equipo {
    constructor(_id, 
     NOMBRE,
     COMPLETO,
     IMAGEN,
-    JUGADORES
+    JUGADORES,
+    SELECTDEPARTIDO
             ) {
        this._id=_id;
        this.NOMBRE =NOMBRE;
        this.COMPLETO =COMPLETO;
        this.IMAGEN =IMAGEN;
        this.JUGADORES =JUGADORES;
+       this.SELECTDEPARTIDO = SELECTDEPARTIDO;
 
    }
 Guardar() {
@@ -23,7 +23,7 @@ Guardar() {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/Nuevapelicula');
+xhr.open('POST', 'http://localhost:8080/api/nuevoequipo');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -56,7 +56,7 @@ catch(err) {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/Modificapelicula');
+xhr.open('POST', 'http://localhost:8080/api/modificaequipo');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -91,7 +91,7 @@ catch(err) {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/Eliminapelicula');
+xhr.open('POST', 'http://localhost:8080/api/eliminaequipo');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -125,7 +125,7 @@ Seleccionartodos() {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/seleccionartodos');
+xhr.open('POST', 'http://localhost:8080/api/Seleccionartodos');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -160,7 +160,7 @@ catch(err) {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/seleccionarporfecha');
+xhr.open('POST', 'http://localhost:8080/api/seleccionarequipoporfecha');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -195,7 +195,7 @@ catch(err) {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/seleccionarpeliculaporid');
+xhr.open('POST', 'http://localhost:8080/api/seleccionarequipoporid');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -231,7 +231,7 @@ catch(err) {
       try {
            
                var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/seleccionarpornombre');
+xhr.open('POST', 'http://localhost:8080/api/seleccionarequipopornombre');
 xhr.setRequestHeader('Content-Type', 'application/json');
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -262,7 +262,7 @@ peliculaspormesyanno(mes,anno)
         return new Promise(function(resolve, reject){
          try{
             var xhr = new XMLHttpRequest();
-xhr.open('POST','http://localhost:8080/api/seleccionapelicula');
+xhr.open('POST','http://localhost:8080/api/seleccionaequipo');
 xhr.setRequestHeader('Content-Type','application/json');
 xhr.onload = function(){
     if(xhr.status === 200){
@@ -316,65 +316,67 @@ catch(err){
     
             
             
-           var asientos = new Object();
-        var asientoA1 = new Object();
-            asientoA1.NOMBREESTUDIANTE = null;
-            asientoA1.SECCION=null;
-            asientoA1.CARNET=null;
-            asientos.A1= asientoA1;
-            
-             var asientoA2 = new Object();
-            asientoA2.NOMBREESTUDIANTE = null;
-            asientoA2.SECCION=null;
-            asientoA2.CARNET=null;
-            asientos.A2= asientoA2;
-            
-             var asientoA3 = new Object();
-            asientoA3.NOMBREESTUDIANTE = null;
-            asientoA3.SECCION=null;
-            asientoA3.CARNET=null;
-            asientos.A3= asientoA3;
-
-             var asientoA4 = new Object();
-            asientoA4.NOMBREESTUDIANTE = null;
-            asientoA4.SECCION=null;
-            asientoA4.CARNET=null;
-            asientos.A4= asientoA4;
-             
-             var asientoA5 = new Object();
-            asientoA5.NOMBREESTUDIANTE = null;
-            asientoA5.SECCION=null;
-            asientoA5.CARNET=null;
-            asientos.A5= asientoA5;
-
-             var asientoA6 = new Object();
-            asientoA6.NOMBREESTUDIANTE = null;
-            asientoA6.SECCION=null;
-            asientoA6.CARNET=null;
-            asientos.A6= asientoA6;
+           
 
 
             
         function botonguardarclick() //esta funcionlle na el formulario de pelicula y lo almacena tomando el html y las variables
             {
-                var peliculainstanciada = new _Pelicula(0,
-                document.getElementById("Nombre").value,
-                 document.getElementById("duracion").value,
-                document.getElementById("genero").value,
-               document.getElementById("idiomaaudio").value,
-                document.getElementById("idiomasub").value,
-              document.getElementById("sinopsis").value,
-              document.getElementById("clasificacion").value,
-              document.getElementById("precio").value,
-            document.getElementById("hora").value,
-            document.getElementById("fecha").value,
-           document.getElementById("minuto").value,
-         asientos,
-          imagenenbase64,
-         document.getElementById("estado").value
+              var jugador = new Object();
+            var jugadorA1 = new Object();
+            jugadorA1.NOMBREESTUDIANTE = document.getElementById("nombre_jugador1").value;
+            jugadorA1.SECCION=document.getElementById("seccion1").value;
+            jugadorA1.ESPECIALIDAD=document.getElementById("epecialidad1").value;
+            jugador.A1= jugadorA1;
+            
+             var jugadorA2 = new Object();
+            jugadorA2.NOMBREESTUDIANTE = document.getElementById("nombre_jugador2").value;
+            jugadorA2.SECCION=document.getElementById("seccion2").value;
+            jugadorA2.ESPECIALIDAD=document.getElementById("epecialidad2").value;
+            jugador.A2= jugadorA2;
+
+            var jugadorA3 = new Object();
+            jugadorA3.NOMBREESTUDIANTE = document.getElementById("nombre_jugador3").value;
+            jugadorA3.SECCION=document.getElementById("seccion3").value;
+            jugadorA3.ESPECIALIDAD=document.getElementById("epecialidad3").value;
+            jugador.A3= jugadorA3;
+
+            var jugadorA4 = new Object();
+            jugadorA4.NOMBREESTUDIANTE = document.getElementById("nombre_jugador4").value;
+            jugadorA4.SECCION=document.getElementById("seccion4").value;
+            jugadorA4.ESPECIALIDAD=document.getElementById("epecialidad4").value;
+            jugador.A4= jugadorA4;
+
+            var jugadorA5 = new Object();
+            jugadorA5.NOMBREESTUDIANTE = document.getElementById("nombre_jugador5").value;
+            jugadorA5.SECCION=document.getElementById("seccion5").value;
+            jugadorA5.ESPECIALIDAD=document.getElementById("epecialidad5").value;
+            jugador.A5= jugadorA5;
+
+            var jugadorA6 = new Object();
+            jugadorA6.NOMBREESTUDIANTE = document.getElementById("nombre_jugador6").value;
+            jugadorA6.SECCION=document.getElementById("seccion6").value;
+            jugadorA6.ESPECIALIDAD=document.getElementById("epecialidad6").value;
+            jugador.A6= jugadorA6;
+
+            var jugadorA7 = new Object();
+            jugadorA7.NOMBREESTUDIANTE = document.getElementById("nombre_jugador7").value;
+            jugadorA7.SECCION=document.getElementById("seccion7").value;
+            jugadorA7.ESPECIALIDAD=document.getElementById("epecialidad7").value;
+            jugador.A7= jugadorA7;
+
+            var jugadorA8 = new Object();
+            jugadorA8.NOMBREESTUDIANTE = document.getElementById("nombre_jugador8").value;
+            jugadorA8.SECCION=document.getElementById("seccion8").value;
+            jugadorA8.ESPECIALIDAD=document.getElementById("epecialidad8").value;
+            jugador.A8= jugadorA8;
+                var equipoinstanciada = new _Equipo(0,
+                document.getElementById("nombre").value,
+                document.getElementById("completo").value,
+                imagenenbase64,
+                jugador
                 );
-                                                        
-                peliculainstanciada.Guardar().then(function(response) { //almacena los datos y lanza un alert que indica un guardado exitoso
+                equipoinstanciada.Guardar().then(function(response) { //almacena los datos y lanza un alert que indica un guardado exitoso
   console.log("Success!", response);
             alert("Guardado con exito");
               

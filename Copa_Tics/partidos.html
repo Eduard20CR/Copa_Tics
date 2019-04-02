@@ -7,7 +7,7 @@
 
    <link rel="stylesheet" type="text/css" href="css/css2.css">
 </head>
-<body>
+<body onload="cargaequipoentabla()">
       <header class="bloque_de_titulo">
         <nav>
           <ul>
@@ -28,9 +28,10 @@
     </div>
 </div>
 <div class="formulario"><br><br>
-    <div class="casilla  dato2"><label>Equipo1:</label><br><select id='estado'><option value="0">Si</option><option value="1">No</option></select></div>
+    <div class="casilla  dato2"><label>Equipo1:</label><br><select id='estado1' required><option value="">Seleccione un equipo</option></select></div>
     <div class="casilla  dato2"><label>Dia:</label><br><input type="date" id="dia"></div>
-    <div class="casilla  dato2"><label>Equipo2:</label><br><select id='estado'><option value="0">Si</option><option value="1">No</option></select></div>
+    <div class="casilla  dato2"><label>Equipo2:</label><br><select id='estado2'><option value="">Seleccione un equipo</option></select></div>
+    <button onclick="botondepartido()">Ingresar</button>
     </div>
       <div class="division_de_partidos">
            <div  class="botondecambio2"><a class="asd" href="añadir.html">Equipos</a></div>
@@ -39,6 +40,25 @@
 
 
 <!-- Links-->
+<script type="text/javascript" src="partidos_frontend.js"></script>
 <script type="text/javascript" src="js/jugadores.js"></script>
+<script type="text/javascript" src="equipo_frontend.js"></script>
+<script type="text/javascript">
+    function cargaequipoentabla()
+   {
+  var equipoinstanciada2 = new _Equipo();
+  equipoinstanciada2.Seleccionartodos().then(function(response) {
+    for(var ele in response)
+                  {
+      document.getElementById('estado1').innerHTML += "<option value='"+response[ele].NOMBRE+"'>"+response[ele].NOMBRE+"</option>";
+      document.getElementById('estado2').innerHTML += "<option value='"+response[ele].NOMBRE+"'>"+response[ele].NOMBRE+"</option>";
+        }
+        }, function(error){
+      console.error("Failed!",error);
+      alert("Error"+error);
+    
+  });
+  }
+</script>
 </body>
 </html>
