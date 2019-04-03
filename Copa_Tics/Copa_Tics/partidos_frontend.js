@@ -105,51 +105,48 @@ xhr.send(JSON.stringify(objetoaenviar));
           
 }
 catch(err) {
-     reject(err.message)
+     reject(err.message);
 
 }
     });
     
 } 
 
-consultapormesyanno(mes,anno) {
-    
-       var objetoaenviar = this;
-       var vectordeconsultasfiltradas=[];
-  // Devuelve la promesa
-  return new Promise(function(resolve, reject) {
- 
-      try {
-           
-               var xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:8080/api/seleccionaconsulta');
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.onload = function() {
-  //funciobn que lee la fecha q2ue queremos que se coloque la imagen en nuestro calendario//
-    if (xhr.status === 200) {
-        var consultas =JSON.parse(xhr.responseText);
-        for(var elemento in consultas) {
-            var fechadelaconsulta= new Date(consultas[elemento].FECHA);
-            if((fechadelaconsulta.getMonth()+1 == mes) && (fechadelaconsulta.getFullYear() == anno)){
-                vectordeconsultasfiltradas.push(consultas[elemento]);
+peliculaspormesyanno(mes,anno)
+            {
+            var objetoaenviar = this;
+            var vectordepeliculasfiltradas = [];
+        //Return a new promise.
+        return new Promise(function(resolve, reject){
+         try{
+            var xhr = new XMLHttpRequest();
+xhr.open('POST','http://localhost:8080/api/seleccionapelicula');
+xhr.setRequestHeader('Content-Type','application/json');
+xhr.onload = function(){
+    if(xhr.status === 200){
+        var peliculas =JSON.parse(xhr.responseText);
+        
+        for(var elemento in peliculas)
+            {
+                var fechadelapelicula = new Date(peliculas[elemento].FECHA);
+                if((fechadelapelicula.getMonth()+1 == mes) && (fechadelapelicula.getFullYear() == anno))
+                    {
+                        vectordepeliculasfiltradas.push(peliculas[elemento]);
+                    }
             }
-        }
-        resolve(vectordeconsultasfiltradas);
+        resolve(vectordepeliculasfiltradas);
     }
-    else
-        {
-           reject(xhr); 
-        }
+    else{
+        reject(xhr);
+    }
 };
-xhr.send(JSON.stringify(objetoaenviar));   
-                  
+xhr.send(JSON.stringify(objetoaenviar));    
+                    }
+catch(err){
+    reject(err.message);
 }
-catch(err) {
-     reject(err.message);
-
-}
-    });    
-}
+                });
+            }
 
 }
           

@@ -63,25 +63,7 @@ Guardar(req,res) {
     
 }   
 
-Seleccionartodos(req,res) {
-    Item.find(
-    function(err, item) {
-      if (err)
-                
-                {
-        res.send(err)
-                }else{
-                
-                
-          res.json(item); // devuelve todas las Personas en JSON  
-                       
-                }
-        }
-      );
-    
-    }
 
-    
     Seleccionarporid(req,res) {
 	Item.find({_id:req.body._id}, function(err, item) {
 			if (err){
@@ -105,6 +87,24 @@ Seleccionartodos(req,res) {
 }
 
 
+    Seleccionarporfecha(req,res) { //elige basado en la fecha
+	Item.find({FECHA:req.body.FECHA}, function(err, item) {
+			if (err){
+				res.send(err)}
+        else{
+            
+					res.json(item); // devuelve todas las Personas en JSON		
+				
+        }
+    
+    
+    
+    
+    
+    
+    
+    }
+			);
     
     
     
@@ -112,3 +112,4 @@ Seleccionartodos(req,res) {
 
 
     
+}

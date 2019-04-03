@@ -9,7 +9,7 @@
    <link rel="stylesheet" type="text/css" href="css/css2.css">
    <link rel="stylesheet" type="text/css" href="css/cssdecalendario.css">
 </head>
-<body onload="cargarconsultadelmesyanno()">
+<body>
       <header class="bloque_de_titulo">
         <nav>
           <ul>
@@ -203,52 +203,62 @@
     <div class="calendar-day__content" id="mar06"></div>
   </li>
 </ol>
-        <span id="mesactual" value="02" >2</span>
+        <span id="mesactual" value="Febrero" >2</span>
         <span id="annoactual" value="2019" >2019</span>
      </div>
 
 
 <!-- Links-->
         <script type="text/javascript" src="partidos_frontend.js"></script>
-<script>
-        //funcion para que la imagen de la consulta seq agregada al div//
-         function agregaimgdeconsultaaldiv(iddeldiv,iddelaconsulta)
-          {
-            //estilos de la imagen//
-               document.getElementById("feb"+iddeldiv).innerHTML += "<img src='match-day.jpg' height='80' width='80' id= "+iddelaconsulta+" onclick='cargaconsulta(\""+iddelaconsulta+"\")'>"; 
-          }
-
-          //Función para que al darle click a la imagen mostrada en el calendario nos lleve a otra página donde muestre todos los datos de la consulta//
-          function cargaconsulta(id)
-             {
-                let claseconsultainstanciada = new _Partido(id);
-                   claseconsultainstanciada.Seleccionarporid().then(function(response) {
-                      localStorage.setItem("consultaseleccionada",JSON.stringify(response));
-                         location.href="Datos.html"
-          }, function(error) {
-              console.log(error);
-            })
-
-               }
+<script>function cargataquilla(id)
+        {
 
 
-               //cargar la consulta con el mes y ano para que la imagen ya pueda ser mostrada//
-        function cargarconsultadelmesyanno()
-          {
-              let claseconsultainstanciada = new _Partido();
-                  claseconsultainstanciada.consultapormesyanno(document.getElementById("mesactual").innerHTML,document.getElementById("annoactual").innerHTML).then(function(response) {
-                    //fecha donde se colocará la imagen//
-            for(var elemento in response)
-                {
-                    var fechadelaconsultaactual = new Date(response[elemento].FECHA);
-                    agregaimgdeconsultaaldiv(fechadelaconsultaactual.getDate() +1,response[elemento]._id);        
-                }             
-          }, function(error) {
-              console.log(error);
-            });
+             let clasepeliculainstanciada = new _Partido(id);
+               clasepeliculainstanciada.Seleccionarporid().then(function(response) {
+
+
+
+               localStorage.setItem("peliculaseleccionada",JSON.stringify(response));
+                   location.href="marcador.html"
+}, function(error) {
+ console.log(error);
+});
+
+
+
+
+
+        }
+        </script>
+        <script>
+        function agregaimgdepeliculaaldiv(iddeldiv,iddelapelicula)  //  Primero llega a la funcion de abajo cargarpeliculasdelmesyanno
+
+    {
+        document.getElementById('fec'+iddeldiv).innerHTML += "<img src='image/cancha1.jpeg' height='80' width='80' id= "+iddelapelicula+" onclick='cargataquilla(\""+iddelapelicula+"\")'>"; //  El fec dentro del getElementById es porque solo reconoce los numeros y hay que concatenar el fec
+    }
+    function cargarpeliculasdelmesyanno()
+    {
+
+        let clasepeliculainstanciada = new _Partido();
+               clasepeliculainstanciada.peliculaspormesyanno(document.getElementById("mesactual").innerHTML,document.getElementById("annoactual").innerHTML).then(function(response) {
+                   
+ for(var elemento in response)
+     {
+         var fechadelapeliculaactual = new Date(response[elemento].FECHA);
+         agregaimgdepeliculaaldiv(fechadelapeliculaactual.getDate(),response[elemento]._id);
+         
+     }
+                   
+                   
+                   
+                   
+}, function(error) {
+ console.log(error);
+});
         
-          }
-
-  </script>
+        
+    }
+        </script>
 </body>
 </html>

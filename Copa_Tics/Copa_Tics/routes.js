@@ -16,8 +16,8 @@ module.exports = function(app) {
 	var claseequipo = new controllerpartidos();
 	app.post('/api/nuevopartido', claseequipo.Guardar);
 	app.post('/api/modificarpartido', claseequipo.Modificar);
-	app.post('/api/seleccionaconsulta', claseequipo.Seleccionartodos);
-
+	app.post('/api/seleccionarequipoporid', claseequipo.Seleccionarporid);
+	app.post('/api/seleccionapelicula', claseequipo.Seleccionarporfecha);
 
 	var claseadm = new controllerAdministrador();
 	app.post('/api/nuevoadm', claseadm.Guardar);

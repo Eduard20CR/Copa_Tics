@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <script src="jquery/jquery-3.2.1.min.js"></script>
+   <title>Añadir Partido</title>
+
+   <link rel="stylesheet" type="text/css" href="css/css2.css">
+</head>
+<body onload="cargaequipoentabla()">
+      <header class="bloque_de_titulo">
+        <nav>
+          <ul>
+            <li><a class="boton2 inicio" href="index.html">Inicio&nbsp;&nbsp;<img src="image/boton-de-inicio.png"></a></li>
+            <li><a class="boton1 calendario" href="calendario.html">Calendario&nbsp;&nbsp;<img src="image/calendario.png" ></a></li>
+            <li><a class="boton1 añadir" href="añadir.html">Añadir&nbsp;&nbsp;<img src="image/boton-de-suma.png" ></a></li>
+            <li><a class="boton1 login" href="ingresar.html">Login&nbsp;&nbsp;<img src="image/login.png" ></a></li>
+            <li><a class="boton2 registrar" href="registrar.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </header>
+<div class="cabeza"></div>
+
+
+<div class="cuerpo_de_pagina">
+    <div class="contenedor_titulo">
+      <h2>Partido</h2>
+    </div>
+</div>
+<div class="formulario"><br><br>
+    <div class="casilla  dato2"><label>Equipo1:</label><br><select id='estado1' required><option value="">Seleccione un equipo</option></select></div>
+    <div class="casilla  dato2"><label>Dia:</label><br><input type="date" id="dia"></div>
+    <div class="casilla  dato2"><label>Equipo2:</label><br><select id='estado2'><option value="">Seleccione un equipo</option></select></div>
+    <button onclick="botondepartido()">Ingresar</button>
+    </div>
+      <div class="division_de_partidos">
+           <div  class="botondecambio2"><a class="asd" href="añadir.html">Equipos</a></div>
+           <div  class="botondecambio3"><a class="asd" href="partidos.html">Partidos</a></div>
+      </div>
+
+
+<!-- Links-->
+<script type="text/javascript" src="partidos_frontend.js"></script>
+<script type="text/javascript" src="js/jugadores.js"></script>
+<script type="text/javascript" src="equipo_frontend.js"></script>
+<script type="text/javascript">
+    function cargaequipoentabla()
+   {
+  var equipoinstanciada2 = new _Equipo();
+  equipoinstanciada2.Seleccionartodos().then(function(response) {
+    for(var ele in response)
+                  {
+      document.getElementById('estado1').innerHTML += "<option value='"+response[ele].NOMBRE+"'>"+response[ele].NOMBRE+"</option>";
+      document.getElementById('estado2').innerHTML += "<option value='"+response[ele].NOMBRE+"'>"+response[ele].NOMBRE+"</option>";
+        }
+        }, function(error){
+      console.error("Failed!",error);
+      alert("Error"+error);
+    
+  });
+  }
+</script>
+</body>
+</html>
