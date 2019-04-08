@@ -1,0 +1,211 @@
+.cabeza{
+	z-index: -564;
+	background: url(../image/fondo_estadio.jpg) no-repeat 70% 120%;
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%
+
+}
+body{
+	margin: 0;
+	background-color: #111411;
+}
+.bloque_de_titulo{
+	height: 40px;
+	width: 400px;
+	display: block;
+	float: left;
+}
+.boton1{
+	display: block;
+	float: left;
+}
+.bloque_cerrar_sesion{
+
+position: absolute;
+background-color: white;
+border: 2px solid black; 
+width: 70px;
+height: 40px;
+font-family: Jersey_M54;
+
+}
+
+
+
+
+
+/*	 Cuerpo de index  */
+
+.cuerpo_de_pagina{
+
+	margin: auto;
+display: block;
+margin-top: 120px;
+margin-left: 270px;
+width: 820px;
+background: 
+
+}
+
+
+
+/*	 Final del cuerpo de z-index:  */
+/*   tipografias   */
+
+@font-face{
+	font-family: Jersey_M54;
+	src: url(Cleargothic.ttf);
+}
+a{
+	font-family: Jersey_M54;
+}
+
+@font-face{
+	font-family: titulodetics;
+	src: url(Team_401.ttf);
+}
+h2{
+	text-align: center;
+	font-family: titulodetics;
+}
+h2{
+	font-size: 50px;
+	color: white;
+	margin-right:   105px;
+}
+
+
+
+
+
+
+/*   Final Tipopgrafias*/
+
+ /*  Barra de navegacion  */
+nav {
+
+	margin: auto;
+	position: absolute;
+	width: 100%;
+	background-color: rgba(0,0,0,0.9);
+	top:0px;
+
+}
+nav ul {
+margin : 0 auto;
+
+width : 740px;
+list-style : none;
+}
+nav ul li {
+float : left;
+}
+
+nav ul li a{
+
+display : block;
+width : 140px;
+font-size : 22px;
+line-height : 45px;
+height: 50px;
+text-align : center;
+text-decoration : none;
+color : #ccc;
+}
+.boton2{
+	line-height : 45px;
+}
+nav ul li a:hover {
+background-color: rgba(135, 104, 104, 0.9);
+}
+
+
+
+
+/*  Termina barra de navegacion   */
+
+/*   Carrusel de index   */
+.contenedor {
+	margin-left: 10px;
+			position: relative;
+			width: 800px;
+			height: 350px;
+			background-color: black;
+			border-radius: 15px;
+		}
+		
+		.imagen {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			visibility: hidden;
+			opacity: 0;
+		}
+		
+		.imagen img {
+			height: 100%;
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.texto {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			top: 85%;
+			color: white;
+			font-weight: bold;
+		}
+		
+		.contenedor a{
+			position: absolute;
+			text-decoration: none;
+			color: white;
+			font-size: 36px;
+			top : 50%;
+			transform: translateY(-50%);
+		}
+		.siguiente {
+			left: 97%;
+		}
+		.anterior {
+			right: 97%;
+		}
+		
+		.boton {
+			position: absolute;
+			top: 5%;
+			left: 95%;
+		}
+		
+		.puntos {
+			position: absolute;
+			top: 93%;
+			width: 100%;
+			text-align: center;
+		}
+		.punto {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background-color: white;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+		.punto:hover {
+			cursor: pointer;
+			background-color: gray;
+		}
+		.contenedor a:hover {
+			color: gray;
+		}
+		
+		.actual {
+			visibility: visible;
+			opacity: 1;
+			transition: visibility 1s, opacity 1s;
+		}
+		.activo {
+			background-color: gray;
+		}
+
+/*  Final de Carrusel  */

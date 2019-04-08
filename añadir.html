@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <script src="jquery/jquery-3.2.1.min.js"></script>
+   <title>Añadir Partido</title>
+
+   <link rel="stylesheet" type="text/css" href="css/css2.css">
+</head>
+<body onload="revisarsesion()">
+      <header class="bloque_de_titulo">
+        <nav>
+          <ul>
+            <li><a class="boton2 inicio" href="index.html">Inicio&nbsp;&nbsp;<img src="image/boton-de-inicio.png"></a></li>
+            <li><a class="boton1 calendario" href="calendario.html">Calendario&nbsp;&nbsp;<img src="image/calendario.png" ></a></li>
+            <li><a class="boton1 añadir" href="añadir.html">Añadir&nbsp;&nbsp;<img src="image/boton-de-suma.png" ></a></li>
+            <li><a class="boton1 login" href="ingresar.html">Login&nbsp;&nbsp;<img src="image/login.png" ></a></li>
+            <li><a class="boton2 registrar" href="registrar.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </header>
+<div class="cabeza"></div>
+
+
+<div class="cuerpo_de_pagina">
+    <div class="contenedor_titulo">
+      <h2>Equipo</h2>
+    </div>
+</div>
+<div class="formulario"><br><br>
+
+    <div class="casilla  dato1"><label>Nombre:</label><br><input type="text" name="nombre_equipo" id="nombre"></div>
+    <div class="casilla  dato2"><label>Completo:</label><br><select id='completo'><option value="0">Si</option><option value="1">No</option></select></div>
+    <div class="casilla  dato3"><label>Escudo:</label><br><input class="imagen" id="imgpeli" type="file" ></div>
+    
+      <div class="seleccionarjugador">
+        <span>Jugador:</span><br><br>
+        <div  class="botondecambio1" onclick="jugador1()"><span>1</span></div>
+        <div  class="botondecambio1" onclick="jugador2()"><span>2</span></div>
+        <div  class="botondecambio1" onclick="jugador3()"><span>3</span></div>
+        <div  class="botondecambio1" onclick="jugador4()"><span>4</span></div>
+        <div  class="botondecambio1" onclick="jugador5()"><span>5</span></div>
+        <div  class="botondecambio1" onclick="jugador6()"><span>6</span></div>
+        <div  class="botondecambio1" onclick="jugador7()"><span>7</span></div>
+        <div  class="botondecambio1" onclick="jugador8()"><span>8</span></div>
+      </div>
+      <div class="jugadores">
+        <br><br><br><br>
+      <div id="bloquecambio1" style="display:block;" class="j ugador1">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador1"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion1"><br>
+        <label>Especialidad:</label><br><select id='epecialidad1'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio2" style="display:none;" class="j ugador2">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador2"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion2"><br>
+        <label>Especialidad:</label><br><select id='epecialidad2'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio3" style="display:none;" class="j ugador3">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador3"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion3"><br>
+        <label>Especialidad:</label><br><select id='epecialidad3'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio4" style="display:none;" class="j ugador4">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador4"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion4"><br>
+        <label>Especialidad:</label><br><select id='epecialidad4'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio5" style="display:none;" class="j ugador5">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador5"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion5"><br>
+        <label>Especialidad:</label><br><select id='epecialidad5'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio6" style="display:none;" class="j ugador6">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador6"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion6"><br>
+        <label>Especialidad:</label><br><select id='epecialidad6'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio7" style="display:none;" class="j ugador7">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador7"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion7"><br>
+        <label>Especialidad:</label><br><select id='epecialidad7'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+      <div id="bloquecambio8" style="display:none;" class="j ugador8">
+        <label>Nombre:</label><br><input type="text"  id="nombre_jugador8"><br>
+        <label>Seccion:</label><br><input type="text" id="seccion8"><br>
+        <label>Especialidad:</label><br><select id='epecialidad8'><option value="Ninguno">Ninguna</option><option value="Redes">Redes</option><option value="Desarrollo">Desarrollo</option></select>
+      </div>
+                <td><button onclick="botonguardarclick()">Ingresar</button></td>
+
+    </div>
+</div>
+
+      <div class="division_de_partidos">
+           <div  class="botondecambio2"><a class="asd" href="añadir.html">Equipos</a></div>
+           <div  class="botondecambio3"><a class="asd" href="partidos.html">Partidos</a></div>
+      </div>
+<!-- Links-->
+<script type="text/javascript" src="equipo_frontend.js"></script>
+<script type="text/javascript" src="js/jugadores.js"></script>
+<script type="text/javascript">
+ function revisarsesion() {
+
+
+ if (localStorage.getItem("Usuariolog")==null) {
+      alert("No has iniciado sesion");
+      location.href="ingresar.html";
+    }
+     }
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <script src="jquery/jquery-3.2.1.min.js"></script>
+   <title>Añadir Partido</title>
+
+   <link rel="stylesheet" type="text/css" href="css/css2.css">
+</head>
+<body onload="cargaequipoentabla()">
+      <header class="bloque_de_titulo">
+        <nav>
+          <ul>
+            <li><a class="boton2 inicio" href="index.html">Inicio&nbsp;&nbsp;<img src="image/boton-de-inicio.png"></a></li>
+            <li><a class="boton1 calendario" href="calendario.html">Calendario&nbsp;&nbsp;<img src="image/calendario.png" ></a></li>
+            <li><a class="boton1 añadir" href="añadir.html">Añadir&nbsp;&nbsp;<img src="image/boton-de-suma.png" ></a></li>
+            <li><a class="boton1 login" href="ingresar.html">Login&nbsp;&nbsp;<img src="image/login.png" ></a></li>
+            <li><a class="boton2 registrar" href="registrar.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </header>
+<div class="cabeza"></div>
+
+
+<div class="cuerpo_de_pagina">
+    <div class="contenedor_titulo">
+      <h2>Marcador</h2>
+    </div>
+</div>
+<div class="formulario"><br><br>
+
+    <div class="casilla  dato1"><span>EQUIPO-1:</span><br><span id="nombre_del_equipo1"></span><br><input type="number" name="nombre_equipo1" id="resultado1"><br></div>
+    <div class="casilla  dato2"></div>
+    <div class="casilla  dato3"><span>EQUIPO-2:</span><br><span id="nombre_del_equipo2"></span><br><input type="number" name="nombre_equipo3" id="resultado2"><br></div>
+    
+
+      <div class="jugadores">
+        <br><br><br><br>
+                <td><span>PON EL MARCADOR DEL PARTIDO</span></td>
+
+    </div>
+    <td><button class="botonpararegistrar" onclick="cargadatosdelabutaca()">Ingresar</button></td>
+</div>
+
+      <div class="division_de_partidos">
+           <div  class="botondecambio2"><a class="asd" href="resultado.html">Ver</a></div>
+           <div  class="botondecambio3"><a class="asd" href="añadirresultado.html">Añadir</a></div>
+      </div>
+<!-- Links-->
+<script type="text/javascript" src="partidos_frontend.js"></script>
+<script type="text/javascript">
+
+
+                    
+
+
+
+
+    function cargadatosdelabutaca()
+{
+    //el id de la butaca se los pasa como parametro desde el modal al que presiono guardar
+    var peliculaencache = JSON.parse(localStorage.getItem('consultaseleccionada'))
+    peliculaencache[0].MARCADOR= document.getElementById("resultado1").value+"/"+document.getElementById("resultado2").value;
+    //deben tener linkeado el js de peliculafrontend
+    var partidoinstanciado = new _Partido(peliculaencache[0]._id,
+      peliculaencache[0].FECHA,
+      peliculaencache[0].EQUIPO1,
+      peliculaencache[0].EQUIPO2,
+      peliculaencache[0].MARCADOR
+    )
+    
+    partidoinstanciado.Modificar().then(function(response) {
+  console.log("Success!", response);
+            alert("HAS GUARDADO EL MARCADOR");
+            location.href="index.html"
+}, function(error) {
+  console.error("Failed!", error);
+             alert("Error " + error);
+            
+});
+       
+    
+}
+
+
+
+
+ function cargaequipoentabla()
+   {
+
+    if (localStorage.getItem("Usuariolog")==null) {
+      alert("No has iniciado sesion");
+      location.href="ingresar.html";
+    }
+        var pelicula = JSON.parse(localStorage.getItem('consultaseleccionada'));
+        var equipoinstanciada2 = new _Partido();
+        equipoinstanciada2.Seleccionartodos().then(function(response) {
+
+            document.getElementById("nombre_del_equipo1").innerHTML += pelicula[0].EQUIPO1 ;
+            document.getElementById("nombre_del_equipo2").innerHTML += pelicula[0].EQUIPO2 ;
+              
+              }, function(error){
+            console.error("Failed!",error);
+            alert("Error"+error);
+          
+  });
+  }
+</script>
+</body>
+</html>

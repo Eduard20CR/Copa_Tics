@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <script src="jquery/jquery-3.2.1.min.js"></script>
+   <title>Añadir Partido</title>
+
+   <link rel="stylesheet" type="text/css" href="css/css2.css">
+</head>
+<body onload="cargaequipoentabla()">
+      <header class="bloque_de_titulo">
+        <nav>
+          <ul>
+            <li><a class="boton2 inicio" href="index.html">Inicio&nbsp;&nbsp;<img src="image/boton-de-inicio.png"></a></li>
+            <li><a class="boton1 calendario" href="calendario.html">Calendario&nbsp;&nbsp;<img src="image/calendario.png" ></a></li>
+            <li><a class="boton1 añadir" href="añadir.html">Añadir&nbsp;&nbsp;<img src="image/boton-de-suma.png" ></a></li>
+            <li><a class="boton1 login" href="ingresar.html">Login&nbsp;&nbsp;<img src="image/login.png" ></a></li>
+            <li><a class="boton2 registrar" href="registrar.html">Registrarse</a></li>
+          </ul>
+        </nav>
+      </header>
+<div class="cabeza"></div>
+
+
+<div class="cuerpo_de_pagina">
+    <div class="contenedor_titulo">
+      <h2>Marcador</h2>
+    </div>
+</div>
+<div class="formulario"><br><br>
+
+    <div class="casilla  dato1"><label><span>EQUIPO-1:</span><br><span id="nombre_del_equipo1"></span></label><br></div>
+    <div class="casilla  dato2"></div>
+    <div class="casilla  dato3"><label><span>EQUIPO-2:</span><br><span id="nombre_del_equipo2"></span></label><br></div>
+    
+
+      <div class="jugadores">
+        <br><br><br><br>
+                <td><span>MARCADOR:</span><br><span id="resultado_partido"></span></td>
+
+    </div>
+</div>
+
+      <div class="division_de_partidos">
+           <div  class="botondecambio2"><a class="asd" href="resultado.html">Ver</a></div>
+           <div  class="botondecambio3"><a class="asd" href="añadirresultado.html">Añadir</a></div>
+      </div>
+<!-- Links-->
+<script type="text/javascript" src="partidos_frontend.js"></script>
+<script type="text/javascript">
+
+
+
+
+
+
+ function cargaequipoentabla()
+   {
+        var pelicula = JSON.parse(localStorage.getItem('consultaseleccionada'));
+        var equipoinstanciada2 = new _Partido();
+        equipoinstanciada2.Seleccionartodos().then(function(response) {
+
+            document.getElementById("nombre_del_equipo1").innerHTML += pelicula[0].EQUIPO1 ;
+            document.getElementById("nombre_del_equipo2").innerHTML += pelicula[0].EQUIPO2 ;
+            document.getElementById("resultado_partido").innerHTML += pelicula[0].MARCADOR ;            
+              
+              }, function(error){
+            console.error("Failed!",error);
+            alert("Error"+error);
+          
+  });
+  }
+</script>
+</body>
+</html>
