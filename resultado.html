@@ -53,13 +53,13 @@
 
 
 
-
+//funcion para llenar los span y  poder ver los marcadores y equipos
  function cargaequipoentabla()
    {
         var pelicula = JSON.parse(localStorage.getItem('consultaseleccionada'));
         var equipoinstanciada2 = new _Partido();
         equipoinstanciada2.Seleccionartodos().then(function(response) {
-
+            //
             document.getElementById("nombre_del_equipo1").innerHTML += pelicula[0].EQUIPO1 ;
             document.getElementById("nombre_del_equipo2").innerHTML += pelicula[0].EQUIPO2 ;
             document.getElementById("resultado_partido").innerHTML += pelicula[0].MARCADOR ;            

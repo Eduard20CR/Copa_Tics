@@ -18,6 +18,7 @@
     this.ESTADO=ESTADO;
     this.SALT =SALT;
    }
+   //funcion para guardar los usuarios
 Guardar() {
    var objetoaenviar = this;
   // Return a new promise.
@@ -51,7 +52,7 @@ catch(err) {
 }
     
 
-
+//funcion de log in
  Login() {
   
        var objetoaenviar = this;
@@ -88,6 +89,8 @@ catch(err) {
 }   
    
 }
+
+//forma en la que se toma la imagen y lo pasa a base 64
              let imagenenbase64 = "";
       $("#imgpeli").change(function(){
        readURL(this);
